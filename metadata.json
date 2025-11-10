@@ -1,0 +1,5 @@
+{
+  "name": "Developer Tutorial Notes",
+  "description": "An interactive web application that organizes and displays notes for various developer tutorials, including Next.js and TypeScript. It features a tutorial selector, a navigable sidebar, formatted content with code snippets, and a clean, user-friendly interface.",
+  "requestFramePermissions": []
+}
