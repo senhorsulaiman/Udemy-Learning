@@ -805,6 +805,196 @@ const PARSED_REACT_QUERY_TUTORIAL_NOTES: Topic[] = [
     }
 ];
 
+const PARSED_UNSPLASH_TUTORIAL_NOTES: Topic[] = [
+    {
+        "id": "figma-url",
+        "title": "Figma URL",
+        "content": [
+            { "type": "paragraph", "text": "[Unsplash Images](https://www.figma.com/file/O2MaAAlr4nznh7m53azatL/Unsplash-images?node-id=0%3A1&t=cYDOCgqOs9IX2If0-1)" }
+        ]
+    },
+    {
+        "id": "setup",
+        "title": "Setup",
+        "content": [
+            { "type": "list", "items": ["npm install", "npm run dev"] }
+        ]
+    },
+    {
+        "id": "initial-structure-and-global-context",
+        "title": "Initial Structure and Global Context",
+        "content": [
+            { "type": "paragraph", "text": "Create three components - ThemeToggle, SearchForm and Gallery. Render all of them in App.jsx, and setup global context." }
+        ]
+    },
+    {
+        "id": "dark-theme---initial-setup",
+        "title": "Dark Theme - Initial Setup",
+        "content": [
+            { "type": "paragraph", "text": "In the context of creating a state value called 'isDarkTheme' (boolean) and a helper function called 'toggleDarkTheme', set 'isDarkTheme' to the opposite value when 'toggleDarkTheme' is invoked. Pass 'isDarkTheme' and 'toggleDarkTheme' down to 'ThemeToggle'. In 'ThemeToggle', import two icons from the React Icons library (moon and sun) and create a button. When the button is clicked, invoke 'toggleDarkTheme', and display the appropriate icon based on the value of 'isDarkTheme' inside of the button." }
+        ]
+    },
+    {
+        "id": "dark-theme-class",
+        "title": "Dark Theme Class",
+        "content": [
+            { "type": "paragraph", "text": "In the toggleDarkTheme add logic to add and remove .dark-theme class to body element based on isDarkTheme value." }
+        ]
+    },
+    {
+        "id": "dark-theme---css",
+        "title": "Dark Theme - CSS",
+        "content": [
+            { "type": "paragraph", "text": "Create CSS variables for the background color and text color for both dark mode and normal mode, as well as a CSS variable for the dark mode transition." },
+            { "type": "code", "language": "css", "text": ":root {\n  /* dark mode setup */\n  --dark-mode-bg-color: #333;\n  --dark-mode-text-color: #f0f0f0;\n  --backgroundColor: var(--grey-50);\n  --textColor: var(--grey-900);\n\n  --darkModeTransition: color 0.3s ease-in-out, background-color 0.3s\n      ease-in-out;\n}\n\n.dark-theme {\n  --textColor: var(--dark-mode-text-color);\n  --backgroundColor: var(--dark-mode-bg-color);\n}\n\nbody {\n  transition: var(--darkModeTransition);\n  background: var(--backgroundColor);\n  color: var(--textColor);\n}" }
+        ]
+    },
+    {
+        "id": "user-prefers-dark-mode",
+        "title": "User Prefers Dark Mode",
+        "content": [
+            { "type": "code", "language": "css", "text": "@media (prefers-color-scheme: dark) {\n  :root {\n    --textColor: var(--dark-mode-text-color);\n    --backgroundColor: var(--dark-mode-bg-color);\n  }\n}" }
+        ]
+    },
+    {
+        "id": "searchform-structure",
+        "title": "SearchForm Structure",
+        "content": [
+            { "type": "paragraph", "text": "Create a form with an input and a submit button. The input should have the following attributes: type='text', name='search', placeholder='cat', and className='form-input search-input'. When the user submits the form, access (for now log)the input value." }
+        ]
+    },
+    {
+        "id": "unsplash-info",
+        "title": "Unsplash Info",
+        "content": [
+            { "type": "paragraph", "text": "Unsplash is a website that provides a large collection of high-quality stock photos that are free to use. The Unsplash API is a service that allows developers to access and use Unsplash's collection of photos and related data in their own applications. The API allows developers to search, download, and use the photos in a variety of ways, such as creating photo galleries or integrating them into social media applications. The Unsplash API is widely used by developers to enhance the visual content of their applications or websites." },
+            { "type": "paragraph", "text": "[Unsplash Website](https://unsplash.com/)" }
+        ]
+    },
+    {
+        "id": "sign-up-for-an-unsplash-account",
+        "title": "Sign Up for an Unsplash Account",
+        "content": [
+            { "type": "paragraph", "text": "[Unsplash API](https://unsplash.com/developers)" },
+            { "type": "paragraph", "text": "In order to use the Unsplash API to fetch images for your application, you will need to sign up for an account with Unsplash. This will allow you to obtain an API key that you can use to authenticate your requests." }
+        ]
+    },
+    {
+        "id": "find-the-api-key-and-correct-url-for-searching-images",
+        "title": "Find the API Key and Correct URL for Searching Images",
+        "content": [
+            { "type": "list", "items": ["register an app", "authorization (hint : public authentication)", "search functionality (hint : search photos)"] },
+            { "type": "paragraph", "text": "After signing up for an Unsplash account, you will need to locate your API key and the correct URL to use when searching for images using the Unsplash API. This information can be found in the API documentation provided by Unsplash." }
+        ]
+    },
+    {
+        "id": "test-the-url-using-thunder-client-vs-code-extension",
+        "title": "Test the URL Using Thunder Client VS Code Extension",
+        "content": [
+            { "type": "paragraph", "text": "Before implementing the API in your application, it is a good practice to test the URL using a tool like Thunder Client VS Code Extension. This will allow you to verify that the URL is correct and that you are able to successfully retrieve images using the API." }
+        ]
+    },
+    {
+        "id": "install-and-setup-react-query-in-gallery-component",
+        "title": "Install and Setup React Query in Gallery Component",
+        "content": [
+            { "type": "paragraph", "text": "React Query is a library that can be used to handle API requests in React applications. To fetch images from the Unsplash API, you will need to install and set up React Query in your Gallery component." }
+        ]
+    },
+    {
+        "id": "install-and-setup-react-query-dev-tools",
+        "title": "Install and Setup React Query Dev Tools",
+        "content": [
+            { "type": "paragraph", "text": "React Query dev tools provide a way to inspect and debug React Query data and caching behavior. To use this tool, you will need to install and set up the React Query dev tools in your application." }
+        ]
+    },
+    {
+        "id": "create-a-searchvalue-state-value-in-context.jsx",
+        "title": "Create a searchValue State Value in Context.jsx",
+        "content": [
+            { "type": "paragraph", "text": "In order to implement search functionality in your application, you will need to create a state value to store the user's search input. This can be done in a context file, such as context.jsx." }
+        ]
+    },
+    {
+        "id": "fix-the-usequery",
+        "title": "Fix the useQuery",
+        "content": [
+            { "type": "paragraph", "text": "After setting up React Query and creating the searchValue state value, you will need to modify the useQuery function to fetch images based on the user's search input." }
+        ]
+    },
+    {
+        "id": "check-whether-user-prefers-dark-mode-with-javascript",
+        "title": "Check Whether User Prefers Dark Mode with JavaScript",
+        "content": [
+            { "type": "paragraph", "text": "To provide a better user experience, you can check whether the user prefers dark mode using JavaScript. This can be done by accessing the user's system preferences and setting the theme of your application accordingly." }
+        ]
+    },
+    {
+        "id": "setup-local-storage-to-store-isdarktheme-state-value",
+        "title": "Setup Local Storage to Store isDarkTheme State Value",
+        "content": [
+            { "type": "paragraph", "text": "To persist the user's preferred theme across sessions, you can store the isDarkTheme state value in local storage. This will allow the theme to be preserved even if the user closes and reopens the application." }
+        ]
+    },
+    {
+        "id": "setup-env-variables-in-vite",
+        "title": "Setup ENV Variables in VITE",
+        "content": [
+            { "type": "paragraph", "text": "Environment variables can be used to store sensitive information, such as your Unsplash API key. In order to use environment variables in your application, you will need to set them up in VITE, a build tool for modern web development." }
+        ]
+    },
+    {
+        "id": "deploy-the-application-to-netlify-and-setup-env-variables",
+        "title": "Deploy the Application to Netlify and Setup ENV Variables",
+        "content": [
+            { "type": "paragraph", "text": "Once your application is complete, you can deploy it to a hosting platform such as Netlify. When deploying to Netlify, you will need to set up your environment variables to ensure that your application can access your Unsplash API key." }
+        ]
+    },
+    {
+        "id": "add-css",
+        "title": "Add CSS",
+        "content": [
+            { "type": "paragraph", "text": "Finally, you can add CSS to your application to style the components and provide a polished user interface." }
+        ]
+    },
+    {
+        "id": "dark-theme-class---code",
+        "title": "Dark Theme Class - Code",
+        "content": [
+            { "type": "code", "language": "js", "text": "const body = document.querySelector('body');\nbody.classList.toggle('dark-theme', newDarkTheme);\n\n// alternative setup\ndocument.body.classList.toggle('dark-theme', newDarkTheme);" },
+            { "type": "paragraph", "text": "const body = document.querySelector('body'); - This line selects the body element of the current document using the document.querySelector() method, which returns the first element that matches the specified selector. In this case, it is selecting the body element." },
+            { "type": "paragraph", "text": "body.classList.toggle('dark-theme', isDarkTheme); - This line toggles the dark-theme class of the body element. The classList property is a read-only list that contains the classes of an element. The toggle() method adds a class to the element if it does not have it, or removes it if it does. In this case, it adds the dark-theme class if isDarkTheme is true, and removes it if isDarkTheme is false." }
+        ]
+    },
+    {
+        "id": "elements-property",
+        "title": "Elements Property",
+        "content": [
+            { "type": "paragraph", "text": "The elements property of the event.target object in the handleSubmit function refers to an HTMLCollection containing all the form controls (i.e., input, select, textarea, button, etc.) inside the <form> element." },
+            { "type": "paragraph", "text": "This is useful because you can use the elements collection to get the values of the form controls when the form is submitted. For example, e.target.elements.search.value would give you the value of the search input field when the form is submitted." }
+        ]
+    },
+    {
+        "id": "react-query-info",
+        "title": "React Query Info",
+        "content": [
+            { "type": "paragraph", "text": "By default, useQuery caches the results of the API request for a certain amount of time. This can improve the performance of your application by reducing the number of requests made to the API." },
+            { "type": "paragraph", "text": "When you specify the queryKey array in the options object for useQuery, you are telling the hook how to identify the data being fetched. If the queryKey array doesn't change between renders of the component, then useQuery will return the cached data instead of re-fetching it from the API." },
+            { "type": "paragraph", "text": "The queryKey array is used by useQuery to identify which data the query is fetching. When the queryKey array changes, useQuery assumes that the data being fetched has changed, and it re-runs the queryFn to fetch the updated data." },
+            { "type": "paragraph", "text": "In this case, searchTerm is the user's search input, and it is used to modify the API request URL. By including searchTerm in the queryKey array, you are telling useQuery to re-run the queryFn whenever the user's search input changes, in order to fetch updated data based on the new search term." },
+            { "type": "paragraph", "text": "Therefore, without including searchTerm in the queryKey array, the useQuery hook would not re-fetch data when the user performs a new search." }
+        ]
+    },
+    {
+        "id": "vite-env-vars",
+        "title": "Vite ENV Vars",
+        "content": [
+            { "type": "list", "items": [".env : must be included in .gitignore"] }
+        ]
+    }
+];
+
+
 export const TUTORIALS: TutorialCollection = {
     nextjs: {
         name: "Next.js Tutorial Notes",
@@ -817,5 +1007,9 @@ export const TUTORIALS: TutorialCollection = {
     "react-query": {
         name: "React Query Notes",
         notes: PARSED_REACT_QUERY_TUTORIAL_NOTES
+    },
+    "unsplash-images": {
+        name: "Unsplash Images Tutorial Notes",
+        notes: PARSED_UNSPLASH_TUTORIAL_NOTES
     }
 }
