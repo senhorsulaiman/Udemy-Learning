@@ -651,6 +651,160 @@ const PARSED_TYPESCRIPT_TUTORIAL_NOTES: Topic[] = [
     }
 ];
 
+const PARSED_REACT_QUERY_TUTORIAL_NOTES: Topic[] = [
+    {
+        "id": "server",
+        "title": "Server",
+        "content": [
+            { "type": "list", "items": ["Open server directory.", "run \"npm install\" and \"npm start\""] }
+        ]
+    },
+    {
+        "id": "node-course",
+        "title": "Node Course",
+        "content": [
+            { "type": "paragraph", "text": "[Node Tutorial and Projects Course](https://www.udemy.com/course/nodejs-tutorial-and-projects-course/?referralCode=E94792BEAE9ADD204BC7)" }
+        ]
+    },
+    {
+        "id": "starter",
+        "title": "Starter",
+        "content": [
+            { "type": "list", "items": ["run \"npm install\" and \"npm run dev\"", "Grocery Bud structure"] }
+        ]
+    },
+    {
+        "id": "explore-setup",
+        "title": "Explore Setup",
+        "content": [
+            { "type": "list", "items": ["Explore files and folders"] }
+        ]
+    },
+    {
+        "id": "custom-axios-instance",
+        "title": "Custom Axios Instance",
+        "content": [
+            { "type": "paragraph", "text": "Create utils.js and setup custom axios instance with following base url:'http://localhost:5000/api/tasks'" }
+        ]
+    },
+    {
+        "id": "http-methods",
+        "title": "HTTP Methods",
+        "content": [
+            { "type": "paragraph", "text": "HTTP (Hypertext Transfer Protocol) methods define the types of actions that can be performed on a web server to retrieve, modify or delete information. The most commonly used HTTP methods are GET, POST, PATCH and DELETE. GET retrieves data, POST sends data to be processed, PATCH update or replace existing data, DELETE removes data." },
+            { "type": "list", "items": ["can use fetch()"] },
+            { "type": "paragraph", "text": "GET: This HTTP method is used to retrieve data from a server. When a client sends a GET request to a server, the server will return a response that includes the requested data. This method is typically used to retrieve information from a database, to read a web page, or to download a file. The HTTP GET method is the default method used by web browsers to retrieve data from a server, as it is a safe and efficient way to request resources." },
+            { "type": "code", "language": "js", "text": "// HTTP GET example\ntry {\n  const response = await axios.get('/api/data');\n  console.log(response.data);\n} catch (error) {\n  console.error(error);\n}" },
+            { "type": "code", "language": "js", "text": "// HTTP GET example\naxios\n  .get('/api/data')\n  .then((response) => {\n    console.log(response.data);\n  })\n  .catch((error) => {\n    console.error(error);\n  });" },
+            { "type": "paragraph", "text": "POST: The POST method is used to send data to a server to create or update a resource. When a client sends a POST request to a server, the server will process the request and create a new resource or update an existing one. This method is commonly used in web forms, where users enter information that is then sent to a server for processing." },
+            { "type": "code", "language": "js", "text": "// HTTP POST example\ntry {\n  const response = await axios.post('/api/data', { name: 'John', age: 30 });\n  console.log(response.data);\n} catch (error) {\n  console.error(error);\n}" },
+            { "type": "paragraph", "text": "PATCH: This method is similar to the POST method, but it is used to update only a part of a resource. When a client sends a PATCH request to a server, the server will update the resource with the new data provided in the request. This method is commonly used in REST APIs to update specific properties of a resource." },
+            { "type": "code", "language": "js", "text": "// HTTP PATCH example\ntry {\n  const response = await axios.patch('/api/data/1', { age: 31 });\n  console.log(response.data);\n} catch (error) {\n  console.error(error);\n}" },
+            { "type": "paragraph", "text": "DELETE: The DELETE method is used to remove a resource from a server. When a client sends a DELETE request to a server, the server will delete the resource if it exists. This method is commonly used in REST APIs to remove a resource that is no longer needed or to undo a previous action." },
+            { "type": "code", "language": "js", "text": "// HTTP DELETE example\ntry {\n  const response = await axios.delete('/api/data/1');\n  console.log(response.data);\n} catch (error) {\n  console.error(error);\n}" },
+            { "type": "paragraph", "text": "CRUD stands for Create, Read, Update, and Delete, which are the basic operations that can be performed on a database or web application. These operations allow users to create new data, read existing data, update data, and delete data when necessary." }
+        ]
+    },
+    {
+        "id": "docs",
+        "title": "Docs",
+        "content": [
+            { "type": "paragraph", "text": "[Task API Docs](https://documenter.getpostman.com/view/18152321/2s93RTSDLn)" }
+        ]
+    },
+    {
+        "id": "useeffect-approach",
+        "title": "UseEffect Approach",
+        "content": [
+            { "type": "code", "language": "js", "text": "const fetchTasks = async () => {\n  try {\n    const response = await customFetch.get('/');\n    console.log(response.data);\n  } catch (error) {\n    +console.error(error);\n  }\n};\n\nuseEffect(() => {\n  fetchTasks();\n}, []);" }
+        ]
+    },
+    {
+        "id": "react-query",
+        "title": "React Query",
+        "content": [
+            { "type": "paragraph", "text": "React Query is a state management library that simplifies the process of fetching, caching, and updating data in React applications. Its major benefits include automatic background refetching, caching and stale data management, error handling, and easy pagination and infinite scrolling. Compared to setting up requests with useEffect, React Query provides a more declarative and centralized approach to managing data in React, which results in cleaner and more efficient code. It also reduces boilerplate code and improves performance by minimizing unnecessary re-renders and network requests." },
+            { "type": "list", "items": ["tons of features", "versions"] },
+            { "type": "paragraph", "text": "[React Query](https://tanstack.com/query/v4/docs/react/overview)" }
+        ]
+    },
+    {
+        "id": "install-react-query",
+        "title": "Install",
+        "content": [
+            { "type": "code", "language": "sh", "text": "npm i @tanstack/react-query" }
+        ]
+    },
+    {
+        "id": "setup-react-query",
+        "title": "Setup React Query",
+        "content": [
+            { "type": "paragraph", "text": "main.jsx" },
+            { "type": "code", "language": "tsx", "text": "import { QueryClient, QueryClientProvider } from '@tanstack/react-query';\nconst queryClient = new QueryClient();\n\nReactDOM.createRoot(document.getElementById('root')).render(\n  <QueryClientProvider client={queryClient}>\n    <App />\n  </QueryClientProvider>\n);" }
+        ]
+    },
+    {
+        "id": "first-query",
+        "title": "First Query",
+        "content": [
+            { "type": "paragraph", "text": "Items.jsx" },
+            { "type": "code", "language": "js", "text": "import { useQuery } from '@tanstack/react-query';\n\nconst result = useQuery({\n  queryKey: ['tasks'],\n  queryFn: () => customFetch.get('/'),\n});\nconsole.log(result);" },
+            { "type": "list", "items": ["Query Key\n\nThe unique key you provide is used internally for refetching, caching, and sharing your queries throughout your application.", "Query Function\n\nA query function can be literally any function that returns a promise. The promise that is returned should either resolve the data or throw an error."] }
+        ]
+    },
+    {
+        "id": "error-handling",
+        "title": "Error Handling",
+        "content": [
+            { "type": "code", "language": "tsx", "text": "const Items = () => {\n  const { isLoading, data, error, isError } = useQuery({\n    queryKey: ['tasks'],\n    queryFn: async () => {\n      const { data } = await customFetch.get('/something');\n      return data;\n    },\n  });\n\n  if (isLoading) {\n    return <p style={{ marginTop: '1rem ' }}>Loading...</p>;\n  }\n\n  // if (isError) {\n  //   return <p style={{ marginTop: '1rem ' }}>there was an error...</p>;\n  // }\n  if (error) {\n    return <p style={{ marginTop: '1rem ' }}>{error.message}</p>;\n  }\n  return (\n    <div className='items'>\n      {data.taskList.map((item) => {\n        return <SingleItem key={item.id} item={item} />;\n      })}\n    </div>\n  );\n};\nexport default Items;" }
+        ]
+    },
+    {
+        "id": "thunder-client-extension",
+        "title": "Thunder Client Extension",
+        "content": [
+            { "type": "paragraph", "text": "Test API endpoints directly in VS CODE" }
+        ]
+    },
+    {
+        "id": "test-create-task-challenge",
+        "title": "Test Create Task (Challenge)",
+        "content": [
+            { "type": "list", "items": ["check the docs and test endpoint in Thunder Client"] }
+        ]
+    },
+    {
+        "id": "create-task",
+        "title": "Create Task",
+        "content": [
+            { "type": "paragraph", "text": "Form.jsx" },
+            { "type": "code", "language": "js", "text": "const { mutate: createTask, isLoading } = useMutation({\n  mutationFn: (taskTitle) => customFetch.post('/', { title: taskTitle }),\n});\n\nconst handleSubmit = (e) => {\n  e.preventDefault();\n  createTask(newItemName);\n};" }
+        ]
+    },
+    {
+        "id": "usemutation-helper-options",
+        "title": "useMutation Helper Options",
+        "content": [
+            { "type": "paragraph", "text": "useMutation comes with some helper options that allow quick and easy side-effects at any stage during the mutation lifecycle. These come in handy for both invalidating and refetching queries after mutations" },
+            { "type": "code", "language": "js", "text": "const { mutate: createTask, isLoading } = useMutation({\n  mutationFn: (taskTitle) => customFetch.post('/', { title: taskTitle }),\n  onSuccess: () => {\n    // do something\n  },\n  onError: () => {\n    // do something\n  },\n});" }
+        ]
+    },
+    {
+        "id": "edit-task-challenge",
+        "title": "Edit Task (Challenge)",
+        "content": [
+            { "type": "list", "items": ["check the docs and test endpoint in Thunder Client", "setup the functionality\n  hints : Item.jsx, look for edit log, and two arguments in mutationFn"] }
+        ]
+    },
+    {
+        "id": "delete-task-challenge",
+        "title": "Delete Task (Challenge)",
+        "content": [
+            { "type": "list", "items": ["check the docs and test endpoint in Thunder Client", "setup the functionality"] }
+        ]
+    }
+];
+
 export const TUTORIALS: TutorialCollection = {
     nextjs: {
         name: "Next.js Tutorial Notes",
@@ -659,5 +813,9 @@ export const TUTORIALS: TutorialCollection = {
     typescript: {
         name: "TypeScript Tutorial Notes",
         notes: PARSED_TYPESCRIPT_TUTORIAL_NOTES
+    },
+    "react-query": {
+        name: "React Query Notes",
+        notes: PARSED_REACT_QUERY_TUTORIAL_NOTES
     }
 }
